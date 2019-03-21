@@ -21,30 +21,26 @@
       var err_name = document.getElementById("nameError");
       var err_addr = document.getElementById("addressError");
       var form = document.querySelector("form");
-      //name.trim == 
-      //.trim() method removes whitespace from both sides of a string
-      // looked it up online
-      if (name.trim() == ""){
-        form.setAttribute("action","#");
-        err_name.style.display= "block";
+      
+      var is_valid = true //creating a local variable to test out
+      if (name.length == 0){
+       err_name.style.display = "block";
+       is_valid = false;
         console.log("block1")
       }else {
-        form.setAttribute("action","#");
         err_name.style.display = "";
         console.log("block3")
       }
-      if (addr.trim()==""){
-        form.setAttribute("action","#");
+      if (addr.length == 0){
         err_addr.style.display = "block";
+        is_valid = false;
         console.log("block1")
       }else{
-        form.setAttribute("action","#");
         err_addr.style.display = "";
-        cnosole.log("block4")
+        console.log("block4")
       }
-      if (name.trim() != ""&& addr.trim() !=""){
-        form.setAttribute("action","challenge4.html");
-      }
+      return is_valid;
+      
     }  
  
     </script>
